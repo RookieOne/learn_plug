@@ -32,6 +32,7 @@ defmodule LearnPlug.Mixfile do
     [
       {:cowboy, "~> 1.0"},
       {:plug, "~> 1.0"},
+      {:poison, "~> 3.0.0"},
       {:remix, "~> 0.0.1"}
     ]
   end
