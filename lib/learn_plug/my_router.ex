@@ -3,9 +3,18 @@ defmodule MyRouter do
 
   import Plug.Conn
 
+  require Logger
+
   plug FetchPlug
   plug :match
   plug :dispatch
+
+  plug :log_request
+
+  def log_request(conn, _opts) do
+    Logger.info("#{conn.method} #{conn.request_path}")
+    conn
+  end
 
   match "/howdy" do
     Plug.Conn.send_resp(conn, 200, "Howdy")
