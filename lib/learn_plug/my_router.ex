@@ -3,7 +3,7 @@ defmodule MyRouter do
 
   import Plug.Conn
 
-  plug LogRequestPlug
+  plug Plug.Logger
   plug FetchPlug
   plug :match
   plug :dispatch
