@@ -31,7 +31,8 @@ defmodule LearnPlug.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:remix, "~> 0.0.1"}
     ]
   end
 end
