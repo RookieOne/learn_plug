@@ -3,6 +3,7 @@ defmodule MyRouter do
 
   import Plug.Conn
 
+  plug FetchPlug
   plug :match
   plug :dispatch
 
@@ -19,7 +20,6 @@ defmodule MyRouter do
   end
 
   post "/tweet" do
-    conn = fetch_query_params(conn)
     %{"message" => tweet} = conn.params
     send_resp(conn, 200, "You just tweet'd : " <> tweet)
   end
