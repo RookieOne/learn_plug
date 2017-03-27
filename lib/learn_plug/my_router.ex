@@ -6,7 +6,9 @@ defmodule MyRouter do
   plug Plug.Logger
   plug FetchPlug
   plug RequireContentTypePlug, content_type: "application/json"
-  plug ParseJsonPlug
+  plug Plug.Parsers,
+    parsers: [:urlencoded, :multipart, :json],
+    json_decoder: Poison
 
   plug :match
   plug :dispatch
